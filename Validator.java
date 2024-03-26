@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Validator {
 
@@ -88,9 +89,9 @@ public class Validator {
 		String[] emails = { "user..name@fakemail.com", "user#name@fakemail.com", "user.name@fakemail",
 				"user.name@fakemail..com", "user_n@fakemail.com", "user.nm@fakemail.com", "user@fakemail.com",
 				"user.name@fake-mail.com", "user-name.yul@yahoo.com" };
-		// System.out.println(Validator.validEmails(emails)); // [user_n@fakemail.com, user.nm@fakemail.com,
-		// 													// user@fakemail.com, user.name@fake-mail.com,
-		// 													// user-name.yul@yahoo.com]
+		System.out.println(Validator.validEmails(emails)); // [user_n@fakemail.com, user.nm@fakemail.com,
+															// user@fakemail.com, user.name@fake-mail.com,
+															// user-name.yul@yahoo.com]
 
 		// Test cases for validUsernames()
 		String[] usernames = { "-User2", ".cc123", "userName", "#sd99" };
@@ -295,20 +296,15 @@ public class Validator {
         return isPrefix(prefix) && isDomain(domain);                                                    // returns true if all the checks pass
     }
 
-	/**
-	 * Returns a list of valid email addresses from the given array.
-	 * 
-	 * @param emails The array of email addresses to be validated.
-	 * @return A list containing valid email addresses.
-	 */
-	public static ArrayList<String> validEmails(String[] emails) {
-		ArrayList<String> validEmailList = new ArrayList<>();
-		for (String email : emails) {
-			if (isEmail(email))
-				validEmailList.add(email);
+	public static String[] validEmails(String[] emails) {                                                    // this method checks to see if the email is valid, and adds it to an arraylist if it is
+			List<String> validEmails = new ArrayList<>();                                                   // this line creates a list to store valid email address
+			for (String email : emails) {                                                                   // this line iterates through each email address
+				if (isEmail(email)){                                                                        // checks if the email is valid using isEmail
+					validEmails.add(email);                                                                 // adds the email to the list if it is valid
+				}
+			}
+			return validEmails.toArray(new String[0]);                                                      // returns the array of valid emails
 		}
-		return validEmailList;
-	}
 
 	/**
 	 * Returns a list of valid usernames from the given array.
