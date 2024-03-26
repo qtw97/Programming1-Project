@@ -19,57 +19,57 @@ public class Validator {
 		System.out.println(Validator.isSpecialChar('@', false)); // false
 		System.out.println(Validator.isSpecialChar('!', false)); // false
 
-		// // Test cases for isPrefixChar()
-		// System.out.println(Validator.isPrefixChar('-')); // true
-		// System.out.println(Validator.isPrefixChar('F')); // true
-		// System.out.println(Validator.isPrefixChar('8')); // true
-		// System.out.println(Validator.isPrefixChar('&')); // false
-		// System.out.println(Validator.isPrefixChar(' ')); // false
+		// Test cases for isPrefixChar()
+		System.out.println(Validator.isPrefixChar('-')); // true
+		System.out.println(Validator.isPrefixChar('F')); // true
+		System.out.println(Validator.isPrefixChar('8')); // true
+		System.out.println(Validator.isPrefixChar('&')); // false
+		System.out.println(Validator.isPrefixChar(' ')); // false
 
-		// // Test cases for isDomainChar()
-		// System.out.println(Validator.isDomainChar('-')); // true
-		// System.out.println(Validator.isDomainChar('s')); // true
-		// System.out.println(Validator.isDomainChar('9')); // true
-		// System.out.println(Validator.isDomainChar('_')); // false
+		// Test cases for isDomainChar()
+		System.out.println(Validator.isDomainChar('-')); // true
+		System.out.println(Validator.isDomainChar('s')); // true
+		System.out.println(Validator.isDomainChar('9')); // true
+		System.out.println(Validator.isDomainChar('_')); // false
 
-		// // Test cases for singleAtSign()
-		// System.out.println(Validator.singleAtSign("username@domain.com")); // true
-		// System.out.println(Validator.singleAtSign("@gmail.com")); // true
-		// System.out.println(Validator.singleAtSign("A@b@c@d")); // false
+		// Test cases for singleAtSign()
+		System.out.println(Validator.singleAtSign("username@domain.com")); // true
+		System.out.println(Validator.singleAtSign("@gmail.com")); // true
+		System.out.println(Validator.singleAtSign("A@b@c@d")); // false
 
-		// // Test cases for fetchBeforeAt()
-		// System.out.println(Validator.fetchBeforeAt("username@domain.com")); // "username"
-		// System.out.println(Validator.fetchBeforeAt("you@regreat")); // "you"
-		// System.out.println(Validator.fetchBeforeAt("@gmail.com")); // ""
+		// Test cases for fetchBeforeAt()
+		System.out.println(Validator.fetchBeforeAt("username@domain.com")); // "username"
+		System.out.println(Validator.fetchBeforeAt("you@regreat")); // "you"
+		System.out.println(Validator.fetchBeforeAt("@gmail.com")); // ""
 
-		// // Test cases for fetchAfterAt()
-		// System.out.println(Validator.fetchAfterAt("username@domain.com")); // "domain.com"
-		// System.out.println(Validator.fetchAfterAt("you@regreat")); // "regreat"
-		// System.out.println(Validator.fetchAfterAt("@gmail.com")); // "gmail.com"
+		// Test cases for fetchAfterAt()
+		System.out.println(Validator.fetchAfterAt("username@domain.com")); // "domain.com"
+		System.out.println(Validator.fetchAfterAt("you@regreat")); // "regreat"
+		System.out.println(Validator.fetchAfterAt("@gmail.com")); // "gmail.com"
 
-		// // Test cases for isPrefix()
-		// System.out.println(Validator.isPrefix("you_me")); // true
-		// System.out.println(Validator.isPrefix("to.bcc")); // true
-		// System.out.println(Validator.isPrefix("and..so")); // false
-		// System.out.println(Validator.isPrefix("thebest!")); // false
+		// Test cases for isPrefix()
+		System.out.println(Validator.isPrefix("you_me")); // true
+		System.out.println(Validator.isPrefix("to.bcc")); // true
+		System.out.println(Validator.isPrefix("and..so")); // false
+		System.out.println(Validator.isPrefix("thebest!")); // false
 
-		// // Test cases for isDomain()
-		// System.out.println(Validator.isDomain("gmail.com")); // true
-		// System.out.println(Validator.isDomain("ac-133.yul")); // true
-		// System.out.println(Validator.isDomain("and..so ")); // false
-		// System.out.println(Validator.isDomain(".com")); // false
-		// System.out.println(Validator.isDomain(".x")); // false
+		// Test cases for isDomain()
+		System.out.println(Validator.isDomain("gmail.com")); // true
+		System.out.println(Validator.isDomain("ac-133.yul")); // true
+		System.out.println(Validator.isDomain("and..so ")); // false
+		System.out.println(Validator.isDomain(".com")); // false
+		System.out.println(Validator.isDomain(".x")); // false
 
-		// // Test cases for isEmail()
-		// System.out.println(Validator.isEmail("user..name@fakemail.com")); // false
-		// System.out.println(Validator.isEmail("user#name@fakemail.com")); // false
-		// System.out.println(Validator.isEmail("user.name@fakemail")); // false
-		// System.out.println(Validator.isEmail("user.name@fakemail..com")); // false
-		// System.out.println(Validator.isEmail("user_n@fakemail.com")); // true
-		// System.out.println(Validator.isEmail("user.nm@fakemail.com")); // true
-		// System.out.println(Validator.isEmail("user@fakemail.com")); // true
-		// System.out.println(Validator.isEmail("user.name@fake-mail.com")); // true
-		// System.out.println(Validator.isEmail("user-name.yul@yahoo.com")); // true
+		// Test cases for isEmail()
+		System.out.println(Validator.isEmail("user..name@fakemail.com")); // false
+		System.out.println(Validator.isEmail("user#name@fakemail.com")); // false
+		System.out.println(Validator.isEmail("user.name@fakemail")); // false
+		System.out.println(Validator.isEmail("user.name@fakemail..com")); // false
+		System.out.println(Validator.isEmail("user_n@fakemail.com")); // true
+		System.out.println(Validator.isEmail("user.nm@fakemail.com")); // true
+		System.out.println(Validator.isEmail("user@fakemail.com")); // true
+		System.out.println(Validator.isEmail("user.name@fake-mail.com")); // true
+		System.out.println(Validator.isEmail("user-name.yul@yahoo.com")); // true
 
 		// Test cases for isUsername()
 		System.out.println(Validator.isUsername("-User2")); // _user2
@@ -206,6 +206,110 @@ public class Validator {
 		return hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
 	}
 	
+	public static boolean isPrefixChar(char input){                                                     // this method checks to see if the prefix contains a valid special character
+        return isAlphaNum(input) || isSpecialChar(input, true);
+    }
+    
+    public static boolean isPrefix(String input){                                                       // this method checks to see if the entire prefix is valid
+        if (input.isEmpty()) {                                                                          // if the input is empty, return false                                      
+            return false;
+        }
+        char firstChar = input.charAt(0);                                                               // this part checks to see if the first character is valid
+        if (!isAlphaNum(firstChar)) {
+            return false;
+        }
+        for (int i = 1; i < input.length(); i++) {                                                      // this part checks to see if the rest of the string is valid
+            char currentChar = input.charAt(i);
+            char previousChar = input.charAt(i - 1);
+            if (!isPrefixChar(currentChar)) {
+                return false;
+            } 
+            if (isSpecialChar(previousChar, true) && !isAlphaNum(currentChar)) {        // denies the check if the previous character is an invalid special character AND if the current character is not a letter or number
+                return false;
+            }
+        } 
+        return true;                                                                                    // return true if the entire prefix is valid
+    }
+
+    public static boolean isDomainChar(char input){                                                     // this method checks if the characters in the domain are valid
+        return isAlphaNum(input) || isSpecialChar(input, false);
+    }
+
+    public static boolean singleAtSign (String email){                                                  // this method checks to see if there is only one @ symbol in the email address
+        int count = 0;
+        for (int i = 0; i < email.length(); i++){                                                       // counts the number of @ symbols
+            if (email.charAt(i) == '@'){
+                count++;
+            }
+        }
+        return count == 1;
+    }
+
+    public static String fetchBeforeAt(String email){                                                   // this method fetches the portion before the @ symbol
+        int atIndex = email.indexOf('@');
+        if (atIndex == -1){
+            throw new IllegalArgumentException("Invalid email address format.  Missing @ symbol.");     // throw creates a custom error 
+        }
+        return email.substring(0, atIndex);                                                             // returns the string portion before the @ symbol
+    }
+
+    public static String fetchAfterAt(String email){                                                    // this method fetches the portion after the @ symbol
+        int atIndex = email.indexOf('@');
+        if (atIndex == -1){
+            throw new IllegalArgumentException("Invalid email address format.  Missing @ symbol.");     // throw creates a custom error 
+        }
+        return email.substring(atIndex + 1, email.length());                                            // returns the string portion after the @ symbol
+    }
+
+    public static boolean isDomain (String domain){
+        String[] portions = domain.split("\\.");                                                        // this line splits the domain into 2 parts, which is seprated by a period
+        if (portions.length != 2){                                                                      // checks to see if there actually are 2 parts
+            return false;
+        }
+        String firstPortion = portions[0];
+        if (firstPortion.isEmpty() || !Character.isLetterOrDigit(firstPortion.charAt(0))){              // checks to see if the domain is empty or not
+            return false;
+        }
+        for (int i = 1; i < firstPortion.length(); i++){                                                // this part checks to see if the valid is valid only if the first part of the domain is not empty
+            char c = firstPortion.charAt(i);
+            if (!isDomainChar(c)) {
+                return false;
+            }
+            if ((c == '.' || c == '-') && !Character.isLetterOrDigit(firstPortion.charAt(i + 1))){      // checks to see if there are valid special characters in the domain
+                return false;
+            }
+        }
+        String secondPortion = portions[1];
+        if (secondPortion.length() < 2 || !secondPortion.matches("[a-zA-Z]+")){                         // checks to see if the second portion after the period is valid
+            return false;
+        }
+        return true;                                                                                    // returns true if all the checks pass
+    }
+
+    public static boolean isEmail (String email) {                                                      // this method checks to see if the email address is valid   (final method for email validation)                                  
+        if (!singleAtSign(email)){                                                                      // calls back the method to see if there is only one @ symbol in the email address
+            return false;
+        }
+        String prefix = fetchBeforeAt(email);                                                           // calls back the method to fetch the portion before the @ symbol to use later in the isEmail method
+        String domain = fetchAfterAt(email);                                                            // calls back the method to fetch the portion after the @ symbol to use later in the isEmail method
+        return isPrefix(prefix) && isDomain(domain);                                                    // returns true if all the checks pass
+    }
+
+	/**
+	 * Returns a list of valid email addresses from the given array.
+	 * 
+	 * @param emails The array of email addresses to be validated.
+	 * @return A list containing valid email addresses.
+	 */
+	public static ArrayList<String> validEmails(String[] emails) {
+		ArrayList<String> validEmailList = new ArrayList<>();
+		for (String email : emails) {
+			if (isEmail(email))
+				validEmailList.add(email);
+		}
+		return validEmailList;
+	}
+
 	/**
 	 * Returns a list of valid usernames from the given array.
 	 * 
