@@ -86,3 +86,25 @@ public static boolean isPrefixChar(char input){                                 
         String domain = fetchAfterAt(email);                                                            // calls back the method to fetch the portion after the @ symbol to use later in the isEmail method
         return isPrefix(prefix) && isDomain(domain);                                                    // returns true if all the checks pass
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static String[] validEmail(String[] emails) {                                                    // this method checks to see if the email is valid, and adds it to an arraylist if it is
+                List<String> validEmails = new ArrayList<>();                                                   // this line creates a list to store valid email address
+                for (String email : emails) {                                                                   // this line iterates through each email address
+                    if (isEmail(email)){                                                                        // checks if the email is valid using isEmail
+                        validEmails.add(email);                                                                 // adds the email to the list if it is valid
+                    }
+                }
+                return validEmails.toArray(new String[0]);                                                      // returns the array of valid emails
+            }
