@@ -296,15 +296,16 @@ public class Validator {
         return isPrefix(prefix) && isDomain(domain);                                                    // returns true if all the checks pass
     }
 
-	public static String[] validEmails(String[] emails) {                                                    // this method checks to see if the email is valid, and adds it to an arraylist if it is
-			List<String> validEmails = new ArrayList<>();                                                   // this line creates a list to store valid email address
-			for (String email : emails) {                                                                   // this line iterates through each email address
-				if (isEmail(email)){                                                                        // checks if the email is valid using isEmail
-					validEmails.add(email);                                                                 // adds the email to the list if it is valid
-				}
-			}
-			return validEmails.toArray(new String[0]);                                                      // returns the array of valid emails
-		}
+
+    public static ArrayList<String> validEmails(String[] emails) {                                                    // this method checks to see if the email is valid, and adds it to an arraylist if it is
+    	ArrayList<String> validEmails = new ArrayList<>();                                                   // this line creates a list to store valid email address
+            for (String email : emails) {                                                                   // this line iterates through each email address
+                if (isEmail(email)){                                                                        // checks if the email is valid using isEmail
+                    validEmails.add(email);                                                                 // adds the email to the list if it is valid
+                }
+            }
+            return validEmails;                                                     // returns the array of valid emails
+        }
 
 	/**
 	 * Returns a list of valid usernames from the given array.
