@@ -101,6 +101,7 @@ public class Validator {
 		System.out.println(Validator.validPasswords(passwords)); // [H3l10-WoRld, W0w.Pr0ject]
 	}
 
+	
 	/**
 	 * Checks if the given character is alphanumeric.
 	 * 
@@ -108,10 +109,11 @@ public class Validator {
 	 * @return True if the character is alphanumeric, false otherwise.
 	 */
 	public static boolean isAlphaNum(char c) {
+		// Using Java's built-in method to check if the character is alphanumeric
 		return Character.isLetterOrDigit(c);
 	}
-    
-    /**
+	
+	/**
 	 * Checks if the given character is a special character, optionally including
 	 * the underscore character.
 	 * 
@@ -120,9 +122,10 @@ public class Validator {
 	 * @return True if the character is a special character, false otherwise.
 	 */
 	public static boolean isSpecialChar(char c, boolean includeUnderscore) {
+		// Checking if the character matches any of the specified special characters
 		return c == '-' || c == '.' || (includeUnderscore && c == '_');
 	}
-
+	
 	/**
 	 * Validates a username.
 	 * 
@@ -130,19 +133,23 @@ public class Validator {
 	 * @return The validated username or an empty string if invalid.
 	 */
 	public static String isUsername(String username) {
+		// Checking if the username is empty or exceeds the maximum length
 		if (username.isEmpty() || username.length() > 7)
 			return "";
-
+	
 		char firstChar = username.charAt(0);
+		// Ensuring the first character is either '.' or '-'
 		if (firstChar != '.' && firstChar != '-')
 			return "";
-
+	
 		boolean hasAlphanumeric = false;
 		StringBuilder result = new StringBuilder();
 		result.append(Character.toLowerCase(firstChar));
-
+	
+		// Iterating through each character of the username
 		for (int i = 1; i < username.length(); i++) {
 			char c = username.charAt(i);
+			// Checking if the character is valid or not
 			if (!Character.isLetterOrDigit(c) && c != '.' && c != '-') {
 				return "";
 			} else if ((c == '.' || c == '-') && !hasAlphanumeric) {
@@ -154,10 +161,10 @@ public class Validator {
 				result.append(Character.toLowerCase(c));
 			}
 		}
-
+	
 		return result.toString();
 	}
-
+	
 	/**
 	 * Checks if the given password meets the safety criteria.
 	 * 
@@ -165,18 +172,22 @@ public class Validator {
 	 * @return True if the password is safe, false otherwise.
 	 */
 	public static boolean safePassword(String password) {
+		// Checking if the password length is within the specified range
 		if (password.length() < 7 || password.length() > 15)
 			return false;
-
+	
 		boolean hasUppercase = false;
 		boolean hasLowercase = false;
 		boolean hasNumber = false;
 		boolean hasSpecialChar = false;
 		char prevChar = '\0';
-
+	
+		// Iterating through each character of the password
 		for (char c : password.toCharArray()) {
+			// Checking if the character is alphanumeric or special character
 			if (!isAlphaNum(c) && !isSpecialChar(c, true))
 				return false;
+			// Tracking if the password contains uppercase, lowercase, number, and special characters
 			if (Character.isUpperCase(c))
 				hasUppercase = true;
 			if (Character.isLowerCase(c))
@@ -185,15 +196,17 @@ public class Validator {
 				hasNumber = true;
 			if (isSpecialChar(c, true))
 				hasSpecialChar = true;
+			// Checking for consecutive identical characters
 			if (c == prevChar)
 				return false;
 			prevChar = c;
 		}
-
+	
+		// Ensuring all required criteria are met
 		return hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
 	}
-
-    /**
+	
+	/**
 	 * Returns a list of valid usernames from the given array.
 	 * 
 	 * @param usernames The array of usernames to be validated.
@@ -201,14 +214,16 @@ public class Validator {
 	 */
 	public static ArrayList<String> validUsernames(String[] usernames) {
 		ArrayList<String> validUsernameList = new ArrayList<>();
+		// Iterating through each username in the array
 		for (String username : usernames) {
+			// Validating the username and adding it to the list if it's valid
 			String validUsername = isUsername(username);
 			if (!validUsername.isEmpty())
 				validUsernameList.add(validUsername);
 		}
 		return validUsernameList;
 	}
-
+	
 	/**
 	 * Returns a list of valid passwords from the given array.
 	 * 
@@ -217,7 +232,9 @@ public class Validator {
 	 */
 	public static ArrayList<String> validPasswords(String[] passwords) {
 		ArrayList<String> validPasswordList = new ArrayList<>();
+		// Iterating through each password in the array
 		for (String password : passwords) {
+			// Validating the password and adding it to the list if it's valid
 			if (safePassword(password))
 				validPasswordList.add(password);
 		}
